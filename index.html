@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXI Fondeo - Proceso de Retiro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .info-box h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .calculation {
+            background: #e8f4fc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .calculation h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .calculation-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .calculation-item:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        
+        .important-note {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        
+        .contact {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        
+        .button:hover {
+            background: #2980b9;
+        }
+        
+        @media (max-width: 600px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AXI FONDEO</h1>
+            <p>Proceso de Retiro de Fondos</p>
+        </div>
+        
+        <div class="content">
+            <div class="info-box">
+                <h3>Información Importante</h3>
+                <p>Su solicitud de retiro de $80,000 está pendiente. Para completar el proceso, es necesario realizar un depósito de $1,000 para cubrir los gastos de envío y verificación de seguridad.</p>
+            </div>
+            
+            <h2>Proceso de Retiro</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Solicitud de Retiro</h4>
+                        <p>Usted ha solicitado retirar $80,000 USD de su cuenta de fondeo.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Depósito Requerido</h4>
+                        <p>Para proceder con el retiro, debe depositar $1,000 USD para cubrir gastos de envío y verificación de seguridad.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Liberación de Fondos</h4>
+                        <p>Una vez confirmado el depósito, liberaremos el capital de $80,000 USD.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Distribución de Fondos</h4>
+                        <p>El depósito de $1,000 USD se verá reflejado en su monedero, donde el 10% ($100 USD) quedará como ganancia neta para la empresa, y usted retirará el 90% ($900 USD).</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calculation">
+                <h3>Desglose de Transacción</h3>
+                <div class="calculation-item">
+                    <span>Monto de retiro solicitado:</span>
+                    <span>$80,000 USD</span>
+                </div>
+                <div class="calculation-item">
+                    <span>Depósito requerido para gastos:</span>
+                    <span>$1,000 USD</span>
+                </div>
+                <div class="calculation-item">
+                    <span>10% para la empresa (ganancia neta):</span>
+                    <span>$100 USD</span>
+                </div>
+                <div class="calculation-item">
+                    <span>90% devuelto a su monedero:</span>
+                    <span>$900 USD</span>
+                </div>
+                <div class="calculation-item">
+                    <span>Total que recibirá después del proceso:</span>
+                    <span>$80,900 USD</span>
+                </div>
+            </div>
+            
+            <div class="important-note">
+                <h4>Nota de Seguridad</h4>
+                <p>Este proceso garantiza la seguridad de ambas partes. El depósito inicial nos permite verificar la autenticidad de la transacción y cubrir los gastos operativos. Una vez completado, su retiro será procesado inmediatamente.</p>
+            </div>
+            
+            <div class="contact">
+                <p>¿Tiene preguntas? Contacte a nuestro equipo de soporte</p>
+                <a href="#" class="button">Proceder con el Depósito</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
